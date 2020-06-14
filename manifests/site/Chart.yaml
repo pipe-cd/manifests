@@ -1,6 +1,6 @@
 apiVersion: v2
-name: pipecd
-description: A Helm chart for Control Plane of PipeCD
+name: site
+description: A Helm chart for PipeCD website
 
 # A chart can be either an 'application' or a 'library' chart.
 # Application charts are a collection of templates that can be packaged into versioned archives
