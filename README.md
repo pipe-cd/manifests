@@ -32,3 +32,7 @@ helm install piped-name ./manifests/piped \
 ``` consolse
 TODO
 ```
+
+## IAP Settings
+
+Please see [Enabling IAP for GKE](https://cloud.google.com/iap/docs/enabling-kubernetes-howto#enabling_iap) and get your IAP client ID and secret.

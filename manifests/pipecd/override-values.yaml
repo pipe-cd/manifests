@@ -1,0 +1,15 @@
+backendConfig:
+  enabled: true
+
+managedCertificate:
+  enabled: true
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.global-static-ip-name: pipecd
+    networking.gke.io/managed-certificates: pipecd
+  domains:
+    - api.pipecd.dev
+    - dev.pipecd.dev
