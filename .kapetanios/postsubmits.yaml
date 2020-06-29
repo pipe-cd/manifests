@@ -5,12 +5,12 @@ spec:
   - name: publish-charts
     timeout: 30m
     skipBranches:
-      - *
+      - "*"
     steps:
     - description: Publish helm charts
       runner: gcr.io/pipecd/chart-releaser:0.0.1
       commands:
-        - "/chart-releaser --bucket=pipecd-charts --manifests-dir=manifests --credentials-file=/secrets/chart_releaser_service_account"
+        - /chart-releaser --bucket=pipecd-charts --manifests-dir=manifests --credentials-file=/secrets/chart_releaser_service_account
       secrets:
       - name: chart_releaser_service_account
         type: PROJECT
