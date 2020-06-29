@@ -4,8 +4,8 @@ spec:
   postsubmits:
   - name: publish-charts
     timeout: 30m
-    branches:
-      - master
+    skipBranches:
+      - *
     steps:
     - description: Publish helm charts
       runner: gcr.io/pipecd/chart-releaser:0.0.1
