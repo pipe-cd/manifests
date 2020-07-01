@@ -2,33 +2,10 @@
 
 This repository contains all automatically generated release manifests for piped and control plane.
 
-## Control Plane
+## How to install piped
 
-- Using helm 3
+Please check out [this documentation](https://pipecd.dev/docs/operator-manual/piped/1-installation/).
 
-``` consolse
-helm install pipecd ./manifests/pipecd
-```
+## How to install control-plane
 
-- Using kubectl
-
-``` consolse
-TODO
-```
-
-## Piped
-
-- Using helm 3
-
-``` console
-helm install piped-name ./manifests/piped \
-    --set args.projectID=your-project-id \
-    --set args.pipedID=your-piped-id \
-    --set args.pipedKey=your-piped-key
-```
-
-- Using kubectl
-
-``` consolse
-TODO
-```
+Please check out [this documentation](https://pipecd.dev/docs/operator-manual/control-plane/1-installation/).
