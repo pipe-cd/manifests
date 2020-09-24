@@ -1,1 +1,0 @@
-Now, the installed piped is connecting to {{ .Values.args.address }}.
