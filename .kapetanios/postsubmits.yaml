@@ -14,14 +14,3 @@ spec:
       secrets:
       - name: chart_releaser_service_account
         type: PROJECT
-  - name: register-event
-    timeout: 30m
-    skipBranches:
-      - ".*"
-    steps:
-    - description: Register a new Event to PipeCD control-plane
-      runner: gcr.io/pipecd/pipectl:v0.9.5
-      commands:
-        - /pipectl event register --api-key=/secrets/dog-pipecd-api-key --address=dog.pipecd.dev:443 --name=helm-release --data={{ .GitHub.pull_request.head.ref }}
-      secrets:
-      - name: dog-pipecd-api-key
