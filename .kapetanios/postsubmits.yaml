@@ -29,5 +29,6 @@ spec:
         - /app/cmd/pipectl/pipectl event register --api-key=`echo $API_KEY` --address=`echo $ADDRESS` --name=helm-release --labels helmRepo=pipecd --data=`echo $TAG`
       secrets:
       - name: dog_pipecd_api_key
+        type: PROJECT
       - name: dog_pipecd_address
         type: PROJECT
