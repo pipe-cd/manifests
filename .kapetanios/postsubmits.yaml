@@ -19,6 +19,8 @@ spec:
     timeout: 30m
     machine:
       resource: small
+    skipBranches:
+      - ".*"
     steps:
     - description: Register a new Event to PipeCD control-plane
       runner: gcr.io/pipecd/pipectl:v0.9.5-22-gbd6e347
