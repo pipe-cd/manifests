@@ -23,7 +23,7 @@ spec:
       - ".*"
     steps:
     - description: Register a new Event to PipeCD control-plane
-      runner: gcr.io/pipecd/pipectl:v0.9.5-22-gbd6e347
+      runner: gcr.io/pipecd/pipectl:v0.9.11
       commands:
         - export TAG=`git describe --tags`
         - export API_KEY=`cat /secrets/dog_pipecd_api_key`
