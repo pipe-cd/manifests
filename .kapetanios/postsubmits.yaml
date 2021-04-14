@@ -8,7 +8,7 @@ spec:
       - ".*"
     steps:
     - description: Publish helm charts
-      runner: gcr.io/pipecd/chart-releaser:1.1.0
+      runner: gcr.io/pipecd/chart-releaser:1.2.0
       commands:
         - /chart-releaser --bucket=charts.pipecd.dev --manifests-dir=manifests --credentials-file=/secrets/chart_releaser_service_account
       secrets:
