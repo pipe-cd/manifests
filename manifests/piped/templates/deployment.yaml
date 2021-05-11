@@ -19,10 +19,10 @@ spec:
         sidecar.istio.io/inject: "false"
         rollme: {{ randAlphaNum 5 | quote }}
     spec:
-      serviceAccountName: {{ include "piped.fullname" . }}
+      serviceAccountName: {{ include "piped.serviceAccountName" . }}
       containers:
         - name: piped
-          image: "gcr.io/pipecd/piped:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
           args:
           - piped
@@ -61,10 +61,10 @@ spec:
         - name: piped-config
           configMap:
             name: {{ include "piped.configMapName" . }}
+      {{- with .Values.securityContext }}
       securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 1000
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
