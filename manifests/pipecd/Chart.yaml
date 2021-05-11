@@ -10,9 +10,20 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: v0.9.10-1-v0.9.10-1-8609c84
+version: v0.9.10-1-8609c84
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: v0.9.10-1-v0.9.10-1-8609c84
+appVersion: v0.9.10-1-8609c84
+
+# If you want to update the version of any child charts, bump the version to an arbitrary one.
+dependencies:
+- name: prometheus
+  version: "v13.7.0"
+  repository: "https://prometheus-community.github.io/helm-charts"
+  condition: monitoring.enabled
+- name: grafana
+  version: "6.7.4"
+  repository: "https://grafana.github.io/helm-charts"
+  condition: monitoring.enabled
